@@ -89,7 +89,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         ).exists()
         if review_exists and self.context['request'].method == 'POST':
             raise serializers.ValidationError(
-                'Вы уже оставляли отзыв на это произведение !')
+                'Вы уже оставляли отзыв на это произведение!')
         return data
 
 
