@@ -1,29 +1,24 @@
 import uuid
 
-from rest_framework import viewsets, mixins, filters, status, permissions
-from rest_framework.pagination import (
-    LimitOffsetPagination, PageNumberPagination
-)
-from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework import filters, mixins, permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.pagination import (LimitOffsetPagination,
+                                       PageNumberPagination)
 from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-
 from reviews.models import Category, Genre, Title
-from .filters import TitleSearchFilter
-from .serializers import (
-    CategorySerializer, GenreSerializer,
-    TitleSerializer, UsersSerializer,
-    CommentSerializer, ReviewSerializer,
-    LoginSerializer, SignupUserSerializer,
-    UserMeSerializer,
-)
-from .permissions import (
-    AdminOnly, AdminOrReadOnly, AuthorAdminModeratorOrReadOnly
-)
 from users.models import User
 from users.send_mail_util import send_confirmation_mail
+
+from .filters import TitleSearchFilter
+from .permissions import (AdminOnly, AdminOrReadOnly,
+                          AuthorAdminModeratorOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, LoginSerializer, ReviewSerializer,
+                          SignupUserSerializer, TitleSerializer,
+                          UserMeSerializer, UsersSerializer)
 
 
 class CreateRetrieveDestroyViewSet(
