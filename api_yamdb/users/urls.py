@@ -1,7 +1,5 @@
+from api.views import signup_user, token_generate
 from django.urls import path
-
-from api.views import token_generate, signup_user
-
 
 app_name = 'users'
 urlpatterns = [
