@@ -9,7 +9,7 @@ class AdminOnly(BasePermission):
 
 
 class AdminOrReadOnly(BasePermission):
-    message = 'У вас недостаточно прав для выполнения этой операции'
+    message = 'У вас недостаточно прав для выполнения этой операции!'
 
     def has_permission(self, request, view):
         return (
