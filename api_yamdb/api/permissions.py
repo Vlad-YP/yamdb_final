@@ -2,7 +2,7 @@ from rest_framework.permissions import SAFE_METHODS, BasePermission
 
 
 class AdminOnly(BasePermission):
-    """Доступ только у админа или суперюзера!"""
+    """Доступ только у админа или суперюзера."""
 
     def has_permission(self, request, view):
         return request.user.is_admin
