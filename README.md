@@ -1,5 +1,7 @@
 ![example workflow](https://github.com/Vlad-YP/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+base - 84.201.162.208
+
 # api_yamdb
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Titles). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен администратором (например, можно добавить категорию «Живопись» или «Ювелирка»).
 
