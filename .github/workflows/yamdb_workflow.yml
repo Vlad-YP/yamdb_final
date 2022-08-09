@@ -66,7 +66,6 @@ jobs:
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo DB_PORT=${{ secrets.SECRET_KEY }} >> .env
-            echo DB_PORT=${{ secrets.ALLOWED_HOSTS }} >> .env
             sudo docker-compose up -d
             sudo docker-compose exec -T web python manage.py collectstatic --noinput
   
